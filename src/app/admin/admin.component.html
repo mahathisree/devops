@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br>
+<br>
+<button type="button" class="btn btn-primary" [routerLink]="['/add']">Add</button>
+<div class='table-responsive'>
+    <table class='table table-bordered'>
+        <thead>
+            <tr class="bg-info">
+                <th>Fruits</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let mov of Food'>
+                        <img [src]='mov.Img' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                <td>{{mov.Name}}</td>
+                <td>{{mov.Cost}}</td>
+                <td><button>Edit</button></td>
+    <td><button (click)="onDelete(mov.Name)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
